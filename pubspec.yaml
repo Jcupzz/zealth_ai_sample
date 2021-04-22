@@ -55,7 +55,8 @@ flutter:
     - assets/icons/thermo.svg
     - assets/icons/search.svg
     - assets/icons/fatigue.svg
-    - assets/icons/vomitting.svg
+    - assets/icons/fatigue.png
+    - assets/icons/vomitting.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
