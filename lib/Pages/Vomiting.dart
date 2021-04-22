@@ -172,17 +172,29 @@ class _VomitingState extends State<Vomiting> {
                           child: Container(
                             width: MediaQuery.of(context).size.width,
                             child: ElevatedButton(
-                              onPressed: () {},
-                              child: RichText(
-                                text: TextSpan(style: Theme.of(context).textTheme.headline5, children: [
-                                  WidgetSpan(
-                                      child: Icon(
-                                        Icons.arrow_back_rounded,
-                                        size: 22,
-                                      ),
-                                      alignment: PlaceholderAlignment.middle),
-                                  TextSpan(text: ' Previous'),
-                                ]),
+                              style: ElevatedButton.styleFrom(
+                                primary: Color(0xffA5B2BE)
+                              ),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              // child: RichText(
+                              //   text: TextSpan(style: Theme.of(context).textTheme.headline5, children: [
+                              //     WidgetSpan(
+                              //         child: Icon(
+                              //           Icons.arrow_back_rounded,
+                              //           size: 22,
+                              //         ),
+                              //         alignment: PlaceholderAlignment.middle),
+                              //     TextSpan(text: ' Previous'),
+                              //   ]),
+                              // ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.arrow_back_rounded,size: 18,),
+                                  Text('Previous',style: Theme.of(context).textTheme.headline5.copyWith(color: Colors.white),)
+                                ],
                               ),
                             ),
                           ),
@@ -195,10 +207,11 @@ class _VomitingState extends State<Vomiting> {
                           child: Container(
                             width: MediaQuery.of(context).size.width,
                             child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(primary: Color(0xff51C185)),
                                 onPressed: () {},
                                 child: Text(
-                                  'Next',
-                                  style: Theme.of(context).textTheme.headline5,
+                                  'Update',
+                                  style: Theme.of(context).textTheme.headline5.copyWith(color: Colors.white),
                                 )),
                           ),
                         ),

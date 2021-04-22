@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:zealth_ai_sample/Pages/Vomiting.dart';
 import 'package:zealth_ai_sample/Static/RadioGroupModel.dart';
+import 'package:zealth_ai_sample/main.dart';
 
 class Fatigue extends StatefulWidget {
   @override
@@ -43,70 +45,147 @@ class _FatigueState extends State<Fatigue> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(16, 10, 16, 20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(5,0,0,0),
-              child: Text(
-                "More about Fatigue",
-                style: Theme.of(context).textTheme.headline3,
-              ),
-            ),
-            SizedBox(height: 16,),
-            Card(
-              color: Colors.white,
-              elevation: 10,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              child: Column(
-                  children: RList.map((data) => RadioListTile(
-                      activeColor: Color(0xffFF902A),
-                      title: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(5,0,0,0),
+                  child: Text(
+                    "More about Fatigue",
+                    style: Theme.of(context).textTheme.headline3,
+                  ),
+                ),
+                SizedBox(height: 16,),
+                Card(
+                  color: Colors.white,
+                  elevation: 10,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                      children: RList.map((data) => RadioListTile(
+                          activeColor: Color(0xffFF902A),
+                          title: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SvgPicture.asset(data.icon),
+                              Text("  "+data.name,style: Theme.of(context).textTheme.subtitle1,),
+                            ],
+                          ),
+                          value: data.index,
+                          groupValue: id,
+                          onChanged: (val) {
+                            setState(() {
+                              radioItem = data.name;
+                              id = data.index;
+                            });
+                          })).toList()),
+                ),
+                SizedBox(height: 25,),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Card(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    elevation: 10,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20,20,20,20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SvgPicture.asset(data.icon),
-                          Text("  "+data.name,style: Theme.of(context).textTheme.subtitle1,),
+                          Text(
+                            'Any medication / Comments',
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          SizedBox(height: 16,),
+                          TextField(
+                            decoration: InputDecoration(
+                              hintText: '  Comment',
+                              hintStyle: Theme.of(context).textTheme.subtitle1.copyWith(color: Color(0xffA5B2BE)),
+                              border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10)
+                              )
+                            ),
+
+                          )
                         ],
                       ),
-                      value: data.index,
-                      groupValue: id,
-                      onChanged: (val) {
-                        setState(() {
-                          radioItem = data.name;
-                          id = data.index;
-                        });
-                      })).toList()),
+                    ),
+                  ),
+                )
+              ],
             ),
-            SizedBox(height: 25,),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              child: Card(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                elevation: 10,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20,20,20,20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'Any medication / Comments',
-                        style: Theme.of(context).textTheme.headline6,
-                      ),
-                      SizedBox(height: 16,),
-                      TextField(
-                        decoration: InputDecoration(
-                          hintText: '  Comment',
-                          hintStyle: Theme.of(context).textTheme.subtitle1.copyWith(color: Color(0xffA5B2BE)),
-                          border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10)
-                          )
+                      Flexible(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  primary: Color(0xffA5B2BE)
+                              ),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              // child: RichText(
+                              //   text: TextSpan(style: Theme.of(context).textTheme.headline5, children: [
+                              //     WidgetSpan(
+                              //         child: Icon(
+                              //           Icons.arrow_back_rounded,
+                              //           size: 22,
+                              //         ),
+                              //         alignment: PlaceholderAlignment.middle),
+                              //     TextSpan(text: ' Previous'),
+                              //   ]),
+                              // ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.arrow_back_rounded,size: 18,),
+                                  Text('Previous',style: Theme.of(context).textTheme.headline5.copyWith(color: Colors.white),)
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
-
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width,
+                            child: isBothSelected?ElevatedButton(
+                                style: ElevatedButton.styleFrom(primary: Color(0xff51C185)),
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(builder:(_)=>Vomiting()));
+                                },
+                                child: Text(
+                                  'Next',
+                                  style: Theme.of(context).textTheme.headline5.copyWith(color: Colors.white),
+                                )):ElevatedButton(
+                                style: ElevatedButton.styleFrom(primary: Color(0xff51C185)),
+                                onPressed: () {},
+                                child: Text(
+                                  'Update',
+                                  style: Theme.of(context).textTheme.headline5.copyWith(color: Colors.white),
+                                )),
+                          ),
+                        ),
                       )
                     ],
                   ),
-                ),
-              ),
+                )
+              ],
             )
           ],
         ),

@@ -6,7 +6,7 @@ import 'package:zealth_ai_sample/MyBottomNavigationBar.dart';
 import 'package:zealth_ai_sample/Pages/Home.dart';
 import 'package:zealth_ai_sample/Pages/Medication.dart';
 import 'package:zealth_ai_sample/Pages/Reports.dart';
-
+bool isBothSelected = false;
 void main() {
   runApp(MyApp());
 }
