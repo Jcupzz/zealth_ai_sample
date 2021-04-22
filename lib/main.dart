@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:zealth_ai_sample/App.dart';
 import 'package:zealth_ai_sample/MyBottomNavigationBar.dart';
 import 'package:zealth_ai_sample/Pages/Home.dart';
 import 'package:zealth_ai_sample/Pages/Medication.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: MyBottomNavigationBar());
+      home: App());
   }
 }
 

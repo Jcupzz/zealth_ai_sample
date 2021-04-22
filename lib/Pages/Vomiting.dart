@@ -20,7 +20,6 @@ class _VomitingState extends State<Vomiting> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Botto,
       appBar: AppBar(
         leading: Builder(
           builder: (BuildContext context) {
