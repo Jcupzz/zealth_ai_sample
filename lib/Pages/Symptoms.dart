@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zealth_ai_sample/Pages/Fatigue.dart';
+import 'package:zealth_ai_sample/Pages/Vomiting.dart';
 import 'package:zealth_ai_sample/Static/InputChipData.dart';
 import 'package:zealth_ai_sample/Static/InputChips.dart';
 
@@ -80,7 +81,16 @@ class _SymptomsState extends State<Symptoms> {
                             height: 22,
                             child: ElevatedButton(
                               onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (_)=>Fatigue()));
+                                if(inputChips.isNotEmpty) {
+                                  if(isFatigueOnceSelected){
+                                    Navigator.push(context, MaterialPageRoute(builder: (_)=>Fatigue()));
+                                  }else if(isVomitingOnceSelected){
+                                    Navigator.push(context, MaterialPageRoute(builder: (_)=>Vomiting()));
+                                  }
+                                  else{
+                                    Navigator.push(context, MaterialPageRoute(builder: (_)=>Fatigue()));
+                                  }
+                                }
                               },
                               child: Text('Check',
                                   style: GoogleFonts.poppins(
