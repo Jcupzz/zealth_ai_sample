@@ -1,0 +1,9 @@
+<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="10.5" cy="10.5" r="10" stroke="#FFC515"/>
+    <circle cx="8.10001" cy="8.10004" r="1.9" stroke="#FFC515"/>
+    <circle cx="8.45121" cy="8.45121" r="0.768293" fill="#FFC515"/>
+    <circle r="1.9" transform="matrix(-1 0 0 1 12.9 8.10004)" stroke="#FFC515"/>
+    <circle r="0.768293" transform="matrix(-1 0 0 1 12.5488 8.19516)" fill="#FFC515"/>
+    <path d="M7 15C7 16.1818 8.63333 16.5 10.5 16.5C13.0128 16.5 14 15.9091 14 15" stroke="#FFC515"/>
+    <path d="M9.09146 11.5244C9.39024 11.8659 10.0646 12.5744 10.3719 12.6768C10.7561 12.8049 11.3963 12.1647 11.7805 11.5244" stroke="#FFC515"/>
+</svg>

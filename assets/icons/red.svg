@@ -1,0 +1,13 @@
+<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="10.5" cy="10.5" r="10" stroke="#FF2020"/>
+    <circle cx="8.10001" cy="8.10001" r="1.9" stroke="#FF2020"/>
+    <circle cx="8.45121" cy="8.45118" r="0.768293" fill="#FF2020"/>
+    <circle r="1.9" transform="matrix(-1 0 0 1 12.9 8.10001)" stroke="#FF2020"/>
+    <path d="M14 12L14.5 13" stroke="#FF2020"/>
+    <path d="M6.63898 11L5.80246 11.7418" stroke="#FF2020"/>
+    <path d="M15 14L15.5 15" stroke="#FF2020"/>
+    <path d="M4.96594 12.4836L4.12943 13.2254" stroke="#FF2020"/>
+    <circle r="0.768293" transform="matrix(-1 0 0 1 12.5488 8.19511)" fill="#FF2020"/>
+    <path d="M14 18C14 16.8182 12.6359 15 10.7692 15C8.25641 15 7 17.0909 7 18" stroke="#FF2020"/>
+    <path d="M9.09146 11.5244C9.39024 11.8659 10.0646 12.5744 10.3719 12.6769C10.7561 12.8049 11.3963 12.1647 11.7805 11.5244" stroke="#FF2020"/>
+</svg>

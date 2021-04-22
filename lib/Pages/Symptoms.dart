@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:zealth_ai_sample/Pages/Fatigue.dart';
 import 'package:zealth_ai_sample/Static/InputChipData.dart';
 import 'package:zealth_ai_sample/Static/InputChips.dart';
 
@@ -78,7 +79,9 @@ class _SymptomsState extends State<Symptoms> {
                           child: Container(
                             height: 22,
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (_)=>Fatigue()));
+                              },
                               child: Text('Check',
                                   style: GoogleFonts.poppins(
                                       fontSize: 11, color: Color(0xffFF0270), fontWeight: FontWeight.w500)),

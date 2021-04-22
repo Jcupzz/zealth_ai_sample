@@ -57,6 +57,10 @@ flutter:
     - assets/icons/fatigue.svg
     - assets/icons/fatigue.png
     - assets/icons/vomitting.png
+    - assets/icons/red.svg
+    - assets/icons/orange.svg
+    - assets/icons/yellow.svg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

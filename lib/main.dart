@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           // display3: GoogleFonts.poppins(fontSize: 30, fontWeight: FontWeight.w600, height: 40),
           headline1: GoogleFonts.poppins(fontSize: 24, fontWeight: FontWeight.w500, color: Colors.black),
           headline2: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black),
-          headline3: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
+          headline3: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black),
           headline4: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),
           headline5: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black),
           headline6: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.black),
