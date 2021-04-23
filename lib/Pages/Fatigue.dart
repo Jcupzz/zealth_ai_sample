@@ -1,8 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:zealth_ai_sample/Pages/Vomiting.dart';
+import 'package:zealth_ai_sample/Static/Post.dart';
 import 'package:zealth_ai_sample/Static/RadioGroupModel.dart';
 import 'package:zealth_ai_sample/main.dart';
+import 'package:http/http.dart' as http;
+
 
 class Fatigue extends StatefulWidget {
   @override
@@ -174,7 +179,18 @@ class _FatigueState extends State<Fatigue> {
                                   style: Theme.of(context).textTheme.headline5.copyWith(color: Colors.white),
                                 )):ElevatedButton(
                                 style: ElevatedButton.styleFrom(primary: Color(0xff51C185)),
-                                onPressed: () {},
+                                onPressed: () async{
+
+
+                                  // // Post newPost = new Post(
+                                  // //     userId: "123", body: 'HI');
+                                  // // Post p = await createPost('https://localhost:8080',
+                                  // //     body: newPost.toMap());
+                                  // // print(p.body);
+                                  // final Post newpost = await sendFruit('userId', 'vfList');
+                                  // print(newpost.userId);
+
+                                },
                                 child: Text(
                                   'Update',
                                   style: Theme.of(context).textTheme.headline5.copyWith(color: Colors.white),
@@ -192,4 +208,30 @@ class _FatigueState extends State<Fatigue> {
       ),
     );
   }
+
+
+  Future<Post> createPost(
+
+      String userId, String vfList) async {
+    final http.Response response = await http.post(
+      Uri.parse('https://192.168.1.38'),
+      headers: {
+        "Access-Control-Allow-Origin": "*", // Required for CORS support to work
+        "Access-Control-Allow-Credentials": "true", // Required for cookies, authorization headers with HTTPS
+        "Access-Control-Allow-Headers": "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale",
+        "Access-Control-Allow-Methods": "POST, OPTIONS"
+      },
+      body: jsonEncode(<String, String> {
+        'user-id': userId,
+        'symptoms':vfList,
+      }),
+    );
+    if (response.statusCode == 200) {
+      return Post.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to load album');
+    }
+  }
+
+
 }

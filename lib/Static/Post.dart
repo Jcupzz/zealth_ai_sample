@@ -1,26 +1,29 @@
+// To parse this JSON data, do
+//
+//     final welcome = welcomeFromJson(jsonString);
+
+import 'dart:convert';
+
+Post welcomeFromJson(String str) => Post.fromJson(json.decode(str));
+
+String welcomeToJson(Post data) => json.encode(data.toJson());
+
 class Post {
-  final String userId;
-  final int id;
-  final String title;
-  final String body;
+  Post({
+    this.symptoms,
+    this.userId,
+  });
 
-  Post({this.userId, this.id, this.title, this.body});
+  String symptoms;
+  String userId;
 
-  factory Post.fromJson(Map json) {
-    return Post(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
-      body: json['body'],
-    );
-  }
+  factory Post.fromJson(Map<String, dynamic> json) => Post(
+    symptoms: json["symptoms"],
+    userId: json["user-id"],
+  );
 
-  Map toMap() {
-    var map = new Map();
-    map["userId"] = userId;
-    map["title"] = title;
-    map["body"] = body;
-
-    return map;
-  }
+  Map<String, dynamic> toJson() => {
+    "symptoms": symptoms,
+    "user-id": userId,
+  };
 }
